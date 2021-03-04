@@ -29,8 +29,16 @@ def blackLivesMatter():
 
         #Function to call data from acab and return data
         results = eat_the_rich(first, last, street, city, state, state_abbreviation, country, zipcode, email, phone, prefix)        
-
+        
+        return redirect(url_for("thanks"))
+        
     return render_template('index.html', data=results)
+
+@app.route('/thanks')
+def thanks():
+    print("Thanks for making history with us!")
+
+    return render_template
 
 if __name__ == "__main__":
     app.run(debug=True)
